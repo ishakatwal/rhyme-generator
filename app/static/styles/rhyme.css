@@ -1,0 +1,59 @@
+
+#lengthBox, #alphaBox {
+    display: none;
+    font-size: 3vh;
+}
+
+.input-word {
+    font-size: 6vh;
+    margin: 2vh;
+}
+
+.input-box {
+    font-size: 5vh;
+}
+
+body.index {
+    background-image: url('/static/img/pen.jpg');
+    background-size: cover;
+
+
+}
+
+body.result {
+    background-image: url('/static/img/result.jpg');
+    background-size: 1920px 1080px;
+    background-repeat: repeat-y;
+}
+
+main {
+    color: white;
+    text-shadow: 1px 1px black;
+    font-size: 4vh;
+}
+
+header {
+    font-size: 7vh;
+    text-align: center;
+}
+
+form {
+    margin-top: 30px;
+    font-size: 4vh;
+}
+
+.submit-button {
+    border-radius: 10px;
+    font-size: 5vh;
+    color: green;
+
+}
+
+a {
+    color: white;
+    font-size: 4vh;
+}
+
+a:hover {
+    color: aqua;
+}

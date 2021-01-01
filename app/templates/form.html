@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta author="Isha Katwal" content="Tool to find rhyming words">
+  <title>Find rhyming words</title>
+  <link rel="stylesheet" style="text/css" href="{{ url_for('static',filename='styles/rhyme.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='ui-script.js') }}"></script>
+
+</head>
+<body class="index">
+  <header>Find Rhyming Words</header>
+  <hr>
+  <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+    <div>
+      {{ form.word.label(class_="input-word") }}
+      {{ form.word(class_="input-box") }}
+      {% for error in form.word.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+      {{ form.submit(class_="submit-button") }}
+
+    </div>
+    <hr>
+    <fieldset>
+      <legend>Specify individual word length:</legend>
+      <p>
+        <input type="radio" name="choice" id="choice_yes" value="yes" onclick="javascript:displayLengthFilter()">
+        <label for="choice_yes">Yes</label>
+      </p>
+      <p>
+        <input type="radio" onclick="javascript:displayLengthFilter()" name="choice" id="choice_no" value="no" checked>
+        <label for="choice_no">No</label>
+    </p>
+        <input id="lengthBox" type="text" name="length" placeholder="Length">
+    </fieldset>
+    <hr>
+    <fieldset>
+      <legend>Filter by starting alphabet:</legend>
+      <p>
+        <input type="radio" onclick="javascript:displayAlphabetFilter()" name="alphabet_choice" id="alphachoice_yes" value="yes">
+        <label for="alphachoice_yes">Yes</label>
+      </p>
+      <p>
+        <input type="radio" onclick="javascript:displayAlphabetFilter()" name="alphabet_choice" id="alphachoice_no" value="no"
+         checked>
+        <label for="alphachoice_no">No</label>
+      </p>
+        <input id="alphaBox" type="text" name="alphabet" placeholder="Starting alphabet">
+    </fieldset>
+  </form>
+</body>
+</html>

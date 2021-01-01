@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List of rhyming words</title>
+        <meta charset="utf-8">
+        <meta author="Isha Katwal" content="Result of rhymes">
+        <link rel="stylesheet" style="text/css" href="{{ url_for('static',filename='styles/rhyme.css') }}">
+    </head>
+    <body class = "result">
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+        </nav>
+        <main>
+            <hr>
+            {% for word in result.split(",") %}
+            <tr>
+                {% if loop.index0 % 12 == 0 %}
+                    <hr>
+                    <td>{{ word }}</td>
+                {% else %}
+                    <td>{{ word }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </main>
+    </body>
+</html>
